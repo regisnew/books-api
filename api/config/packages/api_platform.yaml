@@ -1,0 +1,23 @@
+api_platform:
+    title: Book API Platform
+    version: 1.0.0
+    # Mercure integration, remove if unwanted
+    mercure:
+        include_type: true
+    formats:
+        jsonld: [ 'application/ld+json', 'application/json', 'application/merge-patch+json' ]
+    # Good defaults for REST APIs
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+        pagination_items_per_page: 10
+        pagination_enabled: true
+        pagination_client_enabled: true
+        pagination_client_items_per_page: true
+#        pagination_partial: true
+    collection:
+        pagination:
+            page_parameter_name: page
+            enabled_parameter_name: pagination
+            items_per_page_parameter_name: itemsPerPage
