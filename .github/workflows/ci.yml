@@ -39,6 +39,9 @@ jobs:
             pwa.cache-from=type=gha,scope=pwa-refs/heads/main
             pwa.cache-to=type=gha,scope=pwa-${{github.ref}},mode=max
       -
+        name: Clean data
+        run: rm -rf mysql_data
+      -
         name: Start services
         run: docker compose up php --wait --no-build
       -
