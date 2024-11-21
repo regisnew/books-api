@@ -1,8 +1,8 @@
 services:
   php:
     image: ${IMAGES_PREFIX:-}app-php
-#    depends_on:
-#      - database
+    depends_on:
+      - database
     restart: unless-stopped
     environment:
       PWA_UPSTREAM: pwa:3000
